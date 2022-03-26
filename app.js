@@ -7,6 +7,7 @@ const usersRouter = require('./app/api/v1/users/router');
 const authRouter = require('./app/api/v1/auth/router');
 const categoriesRouter = require('./app/api/v1/categories/router');
 const speakersRouter = require('./app/api/v1/speakers/router');
+const eventsRouter = require('./app/api/v1/events/router');
 
 // middlewares
 const notFoundMiddleware = require('./app/middlewares/not-found');
@@ -30,6 +31,7 @@ app.use(`${versionV1}`, usersRouter);
 app.use(`${versionV1}/auth`, authRouter);
 app.use(`${versionV1}/categories`, categoriesRouter);
 app.use(`${versionV1}/speakers`, speakersRouter);
+app.use(`${versionV1}/events`, eventsRouter);
 
 app.use(notFoundMiddleware);
 app.use(handlerErrorMiddleware);
